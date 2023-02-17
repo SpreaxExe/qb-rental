@@ -1,7 +1,10 @@
 Config = {}
 
+Config.GetCoreObjectQBCore = 'qb-core'
 Config.Cooldown = 20
-
+Config.Drawtext = 'drawtext'
+Config.Target = 'qb-target'
+Config.Menu = 'qb-menu'
 
 Config.carlist = {
     [1] = {
@@ -41,3 +44,13 @@ Config.Coords = {
 }
 
 Config.Keybind = 56 -- https://docs.fivem.net/docs/game-references/controls/
+
+
+--TRANSLATIONS
+translate = {
+    RENTAL_ALREADY = 'You have already rented a car',
+    RENTAL_SUCESS = 'You rented a car ',
+    RENTAL_COIN = ' $',
+    RENTAL_DONTHAVEMONEY = 'You dont have enough money.',
+
+}

@@ -1,5 +1,5 @@
 
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports[Config.GetCoreObjectQBCore]:GetCoreObject()
 
 cd = Config.Cooldown
 
@@ -31,7 +31,7 @@ RegisterNetEvent("carrentmenu:open", function()
     g[#g+1] = {
         header = "⬅ Go Back",
     }
-    exports['qb-menu']:openMenu(g)
+    exports[Config.Menu]:openMenu(g)
 end)
 
 
@@ -40,7 +40,7 @@ RegisterNetEvent('rentmenunpc', function()
 
     if rentad == true then
 
-     QBCore.Functions.Notify('You have already rented a car', 'error', 3500)
+     QBCore.Functions.Notify(translate.RENTAL_ALREADY, 'error', 3500)
 
     else
 
@@ -57,12 +57,12 @@ RegisterNetEvent('ASDASD', function(data)
     QBCore.Functions.TriggerCallback('checkbankmoney', function(cb)
         if cb < price then
        
-          QBCore.Functions.Notify('You dont have enough money.', 'error', 3500)
+          QBCore.Functions.Notify(translate.RENTAL_DONTHAVEMONEY, 'error', 3500)
 
         else
           
             TriggerServerEvent('buyvehicle:server', price)
-            QBCore.Functions.Notify('You rented a car '..' $'..price, 'success', 3500)
+            QBCore.Functions.Notify(translate.RENTAL_SUCESS..translate.RENTAL_COIN..price, 'success', 3500)
 
 
     
@@ -97,7 +97,7 @@ if rentaltimestarted then
      
         cd = cd - 1
       
-        exports['drawtext']:showUI('Expires in '..cd..' '..'Seconds '.. ' '..'[F9]')
+        exports[Config.Drawtext]:showUI('Expires in '..cd..' '..'Seconds '.. ' '..'[F9]')
    
         Citizen.CreateThread(function()
 
@@ -109,7 +109,7 @@ if rentaltimestarted then
                 Citizen.Wait(0)
                 if IsControlJustReleased(0, Config.Keybind) then
                     DeleteVehicle(vehicle,true)
-                    exports['drawtext']:hideUI('hide')
+                    exports[Config.Drawtext]:hideUI('hide')
                     cd = Config.Cooldown
                     rentad = false
 
@@ -128,7 +128,7 @@ if rentaltimestarted then
 
      DeleteVehicle(vehicle,true)
 
-     exports['drawtext']:hideUI('hide')
+     exports[Config.Drawtext]:hideUI('hide')
      
      rentad = false
 

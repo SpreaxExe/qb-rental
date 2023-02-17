@@ -68,7 +68,7 @@ end
 Config.Peds = {
     "u_m_y_chip",
 }
-exports['qb-target']:AddTargetModel(Config.Peds, {
+exports[Config.Target]:AddTargetModel(Config.Peds, {
 	options = {
 		{
 			event = "rentmenunpc",

@@ -1,10 +1,6 @@
-# RENT A CAR FOR QBCORE
+# RENT A CAR SCRIPT
 
-| If you are intested in recieving github updates join the community on **[Discord](https://discord.gg/3t2prQhEhP)**! |
-
-
-
-**[PREVIEW](https://youtu.be/m7yW43iTgQI)**
+All you need to rent a car and enjoy the server ;)
 
 
 
